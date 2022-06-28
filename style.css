@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    padding-top: 50%;
+    background-position: center;
+    background-image:url(./img/gato.jpg);
+    background-repeat: no-repeat;
+}
+
+.container{
+    background-color: transparent;
+    width: 400px;
+    padding: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:40%;
+    left:50%;
+    perspective: 330px;  
+}
+
+.coin{  
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: 50px auto;
+    transform-style: preserve-3d;      
+}
+
+.coin img{
+    width: 145px ;
+}
+
+.heads, .tails{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: visible;
+    backface-visibility:visible;
+}
+
+.tails{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility:hidden;
+}
+
+#start{
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:90%;
+    left:50%;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(170, 35, 35);
+    color: rgb(246, 196, 96);
+}
+
+ @keyframes spin-tails{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2900deg);
+    }
+ }
+ @keyframes spin-heads{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1600deg);
+    }
+ }
